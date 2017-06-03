@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.example.chipmunk.sprout.CustomView.TitleLayout_Me
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.example.chipmunk.sprout.CustomView.TitleLayout_Me>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="院系："
+                android:textSize="20dp" />
+
+            <Spinner
+                android:id="@+id/callfriend1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:entries="@array/cityArray1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="性别："
+                android:textSize="20dp" />
+
+            <Spinner
+                android:id="@+id/callfriend2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:entries="@array/cityArray1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="擅长："
+                android:textSize="20dp" />
+
+            <Spinner
+                android:id="@+id/callfriend3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:entries="@array/cityArray1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="年龄："
+                android:textSize="20dp" />
+
+            <Spinner
+                android:id="@+id/callfriend4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:entries="@array/cityArray1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="是否毕业："
+                android:textSize="20dp" />
+
+            <Spinner
+                android:id="@+id/callfriend5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:entries="@array/cityArray1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="所在地："
+                android:textSize="20dp" />
+
+            <Spinner
+                android:id="@+id/callfriend6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:entries="@array/cityArray1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="职务："
+                android:textSize="20dp" />
+
+            <Spinner
+                android:id="@+id/callfriend7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:entries="@array/cityArray1" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="标签：" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="        根据上述内容为您推荐标签如下：请选择相关勾选，也可在下方框中自定义标签" />
+
+            <ListView
+                android:id="@+id/listView2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_shap"
+                    android:hint="请输入标签" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/btnstyle_welcome"
+                    android:text="添加标签" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+

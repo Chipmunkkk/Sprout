@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="water_leaf">#b9f6dc</color>
+    <color name="textColor_white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="quill_gray">#D8D7D5</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="emerald">#55C47E</color>
+    <color name="monte_carlo">#81C3B1</color>
+    <color name="bermuda">#8BD4C1</color>
+    <color name="tea_green">#D1E6C0</color>
+    <color name="silver_sand">#BBBBBB</color>
+    <color name="alabaster">#F9F9FB</color>
+    <color name="seashell">#F1F1F1</color>
+</resources>

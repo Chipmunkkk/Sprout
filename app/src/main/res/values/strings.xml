@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">有芽</string>
+    <!-- Strings for activity_home_page -->
+    <string name="campusNotice">校内公告</string>
+    <string name="departmentNotice">系内公告</string>
+    <!-- Strings for activity_welcome -->
+    <string name="login_welcome">登  录</string>
+    <string name="register_welcome">注  册</string>
+    <string name="OtherLoginMethod">其他登录方式</string>
+    <!-- Strings for activity_login -->
+    <string name="InputUsrTelphone">    请输入手机号</string>
+    <string name="InputUsrPassword">    请输入密码</string>
+    <string name="CannotLogin">登录遇到问题?</string>
+    <!-- Strings for register -->
+    <string name="next">下一步</string>
+    <string name="OtherRegisterMethod">其他注册方式</string>
+    <!-- Strings for activity_register_inputverificationcode -->
+    <string name="TelRsgister_Notice">您会收到一条带验证码的短信,须输入有效验证码</string>
+    <string name="InputVerificationCode">请输入4位验证码</string>
+    <string name="RegainVerificationCode">重新获取</string>
+    <!-- Strings for register_set_usrname -->
+    <string name="InputUsrName">请输入昵称</string>
+    <string name="SetUsrName">取一个名字,让种子发芽~</string>
+    <string name="OpenSprout">开启有芽</string>
+    <!-- Strings for message_chat -->
+    <string name="SendMessage">发送</string>
+    <string name="title_activity_slider_bar">SliderBar</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_slide_bar">SlideBar</string>
+    <string-array name="cityArray1">
+        <item>北京</item>
+    </string-array>
+
+</resources>

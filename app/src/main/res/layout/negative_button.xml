@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/RadioGroupLayout"
+    android:layout_height="wrap_content">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/main_tab_RadioGroup"
+        android:background="@color/silver_sand" />
+    <RadioGroup
+        android:id="@+id/main_tab_RadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/textColor_white"
+        android:paddingTop="3dp">
+
+        <RadioButton
+            android:id="@+id/radio_message"
+            android:checked="true"
+            style="@style/mainRadioButton"
+            android:drawableTop="@drawable/message_normal"
+            android:text="有芽"
+            android:textColor="@color/black_overlay"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/radio_home"
+            style="@style/mainRadioButton"
+            android:drawableTop="@drawable/school_normal"
+            android:text="我的校园"
+            android:textColor="@color/black_overlay"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/radio_find"
+            style="@style/mainRadioButton"
+            android:drawableTop="@drawable/find_normal"
+            android:text="发现"
+            android:textColor="@color/black_overlay"
+            android:textAlignment="center" />
+    </RadioGroup>
+</RelativeLayout>

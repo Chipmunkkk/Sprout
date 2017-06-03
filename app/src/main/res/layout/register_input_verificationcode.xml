@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/TelRsgister_Notice"/>
+
+        <EditText
+            android:id="@+id/usrName"
+            style="@style/inputStyle_login"
+            android:inputType="number"
+            android:hint="@string/InputVerificationCode"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-35dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="35dp"
+            android:textSize="12sp"
+            android:text="@string/RegainVerificationCode"/>
+
+        <Button
+            android:id="@+id/btn_InputVerificationCode"
+            android:layout_marginTop="20dp"
+            style="@style/btnStyle_welcome"
+            android:text="@string/next" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+
