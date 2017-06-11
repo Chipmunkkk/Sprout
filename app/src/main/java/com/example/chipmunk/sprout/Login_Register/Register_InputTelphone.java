@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.chipmunk.sprout.ActivityCollector;
 import com.example.chipmunk.sprout.R;
 
 public class Register_InputTelphone extends AppCompatActivity {
@@ -24,6 +25,7 @@ public class Register_InputTelphone extends AppCompatActivity {
             public void onClick(View v) {
                 intent = new Intent();
                 intent.setClass(Register_InputTelphone.this,Register_InputVerificationCode.class);
+                ActivityCollector.addActivity(Register_InputTelphone.this);
                 startActivity(intent);
             }
         });

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.chipmunk.sprout.ActivityCollector;
 import com.example.chipmunk.sprout.R;
 import com.example.chipmunk.sprout.MainPage;
 
@@ -26,6 +27,7 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 intent = new Intent();
                 intent.setClass(Login.this,MainPage.class);
+                ActivityCollector.addActivity(Login.this);
                 startActivity(intent);
             }
         });

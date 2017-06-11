@@ -53,6 +53,7 @@ public class Welcome extends Activity implements View.OnClickListener{
                 break;
             default:break;
         }
+        ActivityCollector.addActivity(Welcome.this);
         startActivity(intent);
     }
 }
