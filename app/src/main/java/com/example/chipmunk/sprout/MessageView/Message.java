@@ -5,7 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -13,6 +16,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.chipmunk.sprout.R;
 
@@ -26,6 +30,7 @@ public class Message extends Fragment {
     private ListView MessageListView;
     private Intent intent;
 
+    MessageListAdapter messageListAdapter;
 
     public Message() {
         // Required empty public constructor
@@ -41,10 +46,36 @@ public class Message extends Fragment {
     }
 
     @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.add(0, 0, Menu.NONE, "删除");
+        menu.add(0, 1, Menu.NONE, "置顶");
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item
+                .getMenuInfo();
+        switch (item.getItemId()) {
+            case 0:
+                Toast.makeText(getActivity(),"1",Toast.LENGTH_SHORT).show();
+                break;
+            case 1:
+                Toast.makeText(getActivity(),"2",Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                return super.onContextItemSelected(item);
+        }
+        messageListAdapter.notifyDataSetChanged();
+        return true;
+    }
+
+    @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         MessageListView = (ListView) view.findViewById(R.id.Message_listView);
-        MessageListView.setAdapter(new MessageListAdapter(getActivity()));
+        messageListAdapter = new MessageListAdapter(getActivity());
+        MessageListView.setAdapter(messageListAdapter);
         MessageListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -53,6 +84,7 @@ public class Message extends Fragment {
                 startActivity(intent);
             }
         });
+        registerForContextMenu(MessageListView);
     }
     public class MessageListAdapter extends BaseAdapter {
         Context context;
