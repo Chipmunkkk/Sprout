@@ -1,4 +1,4 @@
-package com.example.chipmunk.sprout;
+package com.example.chipmunk.sprout.Utils;
 
 import android.app.Activity;
 

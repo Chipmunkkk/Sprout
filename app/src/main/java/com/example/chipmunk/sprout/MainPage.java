@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -23,6 +22,7 @@ import com.example.chipmunk.sprout.Me.MyPage;
 import com.example.chipmunk.sprout.MessageView.Message;
 import com.example.chipmunk.sprout.MessageView.Message_Notice;
 import com.example.chipmunk.sprout.MySchool.MyCollege;
+import com.example.chipmunk.sprout.Utils.ActivityCollector;
 
 public class MainPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,View.OnClickListener {

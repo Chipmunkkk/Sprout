@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import com.example.chipmunk.sprout.Login_Register.Login;
 import com.example.chipmunk.sprout.Login_Register.Register_InputTelphone;
+import com.example.chipmunk.sprout.Utils.ActivityCollector;
 
 public class Welcome extends Activity implements View.OnClickListener{
 

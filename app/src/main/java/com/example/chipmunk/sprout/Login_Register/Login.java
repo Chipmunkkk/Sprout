@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.chipmunk.sprout.ActivityCollector;
+import com.example.chipmunk.sprout.Utils.ActivityCollector;
 import com.example.chipmunk.sprout.R;
 import com.example.chipmunk.sprout.MainPage;
 

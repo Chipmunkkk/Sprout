@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.chipmunk.sprout.ActivityCollector;
+import com.example.chipmunk.sprout.Utils.ActivityCollector;
 import com.example.chipmunk.sprout.R;
 
 public class Register_InputTelphone extends AppCompatActivity {
