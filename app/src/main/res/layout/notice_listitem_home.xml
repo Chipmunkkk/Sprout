@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5dp">
+    <TextView
+        android:id="@+id/id_notice_time_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:layout_marginLeft="15dp"
+        android:text="06-07" />
+
+    <TextView
+        android:id="@+id/id_notice_title_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:singleLine="true"
+        android:text="我校学生在第七届全国大学生计算机应用大赛" />
+</LinearLayout>

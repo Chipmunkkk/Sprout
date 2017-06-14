@@ -40,11 +40,5 @@
         </ListView>
     </LinearLayout>
 
-    <com.example.chipmunk.sprout.CustomView.Negative_ButtonLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </com.example.chipmunk.sprout.CustomView.Negative_ButtonLayout>
-
 </FrameLayout>
 

@@ -1,18 +1,28 @@
 package com.example.chipmunk.sprout.MySchool;
 
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
+import com.example.chipmunk.sprout.CustomView.MyListView;
 import com.example.chipmunk.sprout.R;
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.StaticPagerAdapter;
 import com.jude.rollviewpager.hintview.ColorPointHintView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -21,7 +31,15 @@ import com.jude.rollviewpager.hintview.ColorPointHintView;
 public class MyCollege extends Fragment {
 
     private RollPagerView rollPagerView;
+    private MyListView myListView_campus;
+    private MyListView myListView_department;
     private View view;
+    private noticeAdapter noticeAdapter;
+    List<String> Notice_title_campus = new ArrayList<>();
+    List<String> Notice_time_campus = new ArrayList<>();
+
+    List<String> Notice_time_deparment = new ArrayList<>();
+    List<String> Notice_title_deparment = new ArrayList<>();
 
     public MyCollege() {
         // Required empty public constructor
@@ -35,7 +53,41 @@ public class MyCollege extends Fragment {
         view = inflater.inflate(R.layout.homepage, container, false);
         initView();//获取对应控件
         rollPagerViewSet();
+        setData_campus();
+        noticeAdapter = new noticeAdapter(getContext(),Notice_time_campus,Notice_title_campus);
+        myListView_campus.setAdapter(noticeAdapter);
+        setData_department();
+        noticeAdapter = new noticeAdapter(getContext(),Notice_time_deparment,Notice_title_deparment);
+        myListView_department.setAdapter(noticeAdapter);
         return view;
+    }
+
+    public void setData_campus(){
+        Notice_time_campus.add("06-07");
+        Notice_time_campus.add("06-06");
+        Notice_time_campus.add("06-05");
+        Notice_time_campus.add("06-05");
+        Notice_time_campus.add("06-05");
+
+        Notice_title_campus.add("我校学生在第七届全国大学生计算机应用大赛");
+        Notice_title_campus.add("数字艺术系举行第七届数字春天及第二届");
+        Notice_title_campus.add("第一届'古韵东软'传统文化嘉年华举行");
+        Notice_title_campus.add("我校成为多家辽宁省校企联盟会员单位");
+        Notice_title_campus.add("伊藤忠商一行来校参观");
+    }
+
+    public void setData_department(){
+        Notice_time_deparment.add("06-07");
+        Notice_time_deparment.add("06-06");
+        Notice_time_deparment.add("06-05");
+        Notice_time_deparment.add("06-05");
+        Notice_time_deparment.add("06-05");
+
+        Notice_title_deparment.add("我校学生在第七届全国大学生计算机应用大赛");
+        Notice_title_deparment.add("数字艺术系举行第七届数字春天及第二届");
+        Notice_title_deparment.add("第一届'古韵东软'传统文化嘉年华举行");
+        Notice_title_deparment.add("我校成为多家辽宁省校企联盟会员单位");
+        Notice_title_deparment.add("伊藤忠商一行来校参观");
     }
 
     private void rollPagerViewSet() {
@@ -47,6 +99,8 @@ public class MyCollege extends Fragment {
 
     private void initView() {
         rollPagerView = (RollPagerView) view.findViewById(R.id.rollViewpager);
+        myListView_campus = (MyListView) view.findViewById(R.id.id_listView_campusNotice);
+        myListView_department = (MyListView) view.findViewById(R.id.id_listView_departmentNotice);
     }
 
 
@@ -70,6 +124,49 @@ public class MyCollege extends Fragment {
         @Override
         public int getCount() {
             return res.length;
+        }
+    }
+
+    private class noticeAdapter extends BaseAdapter{
+
+        Context context;
+
+        List<String> noticeTitle = new ArrayList<>();
+        List<String> noticeTime = new ArrayList<>();
+
+        public noticeAdapter(Context context,List<String> noticeTime,List<String> noticeTitle){
+            this.context = context;
+            this.noticeTime = noticeTime;
+            this.noticeTitle = noticeTitle;
+        }
+
+        @Override
+        public int getCount() {
+            return noticeTime.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return noticeTime.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            LayoutInflater layoutInflater = LayoutInflater.from(context);
+            View NoticeListViewItem = layoutInflater.inflate(R.layout.notice_listitem_home, null);
+
+            TextView time = (TextView) NoticeListViewItem.findViewById(R.id.id_notice_time_home);
+            TextView title = (TextView) NoticeListViewItem.findViewById(R.id.id_notice_title_home);
+
+            time.setText(noticeTime.get(position));
+            title.setText(noticeTitle.get(position));
+
+            return NoticeListViewItem;
         }
     }
 

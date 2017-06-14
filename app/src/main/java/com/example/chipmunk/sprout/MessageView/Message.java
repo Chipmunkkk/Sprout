@@ -32,6 +32,11 @@ public class Message extends Fragment {
 
     MessageListAdapter messageListAdapter;
 
+    String[] MessageItem_UsrName = {"李四", "王五"};
+    int[] MessageItem_Icon = {R.drawable.sprout, R.drawable.sprout};
+    String[] MessageItem_Message = {"今天有空么????", "A5怎么走?"};
+    String[] MessageItem_Time = {"08:21", "昨天"};
+
     public Message() {
         // Required empty public constructor
     }
@@ -58,10 +63,10 @@ public class Message extends Fragment {
                 .getMenuInfo();
         switch (item.getItemId()) {
             case 0:
-                Toast.makeText(getActivity(),"1",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "1", Toast.LENGTH_SHORT).show();
                 break;
             case 1:
-                Toast.makeText(getActivity(),"2",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "2", Toast.LENGTH_SHORT).show();
                 break;
             default:
                 return super.onContextItemSelected(item);
@@ -74,29 +79,35 @@ public class Message extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         MessageListView = (ListView) view.findViewById(R.id.Message_listView);
-        messageListAdapter = new MessageListAdapter(getActivity());
+        messageListAdapter = new MessageListAdapter(getActivity(),MessageItem_UsrName,MessageItem_Icon,MessageItem_Message,MessageItem_Time);
         MessageListView.setAdapter(messageListAdapter);
         MessageListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 intent = new Intent();
-                intent.setClass(getActivity(),Message_Chat.class);
+                intent.setClass(getActivity(), Message_Chat.class);
                 startActivity(intent);
             }
         });
         registerForContextMenu(MessageListView);
     }
+
     public class MessageListAdapter extends BaseAdapter {
         Context context;
 
         //测试样例,最后从本地或数据库中读取
-        String[] MessageItem_UsrName = {"李四","王五"};
-        int[] MessageItem_Icon = {R.drawable.sprout,R.drawable.sprout};
-        String[] MessageItem_Message = {"今天有空么????","A5怎么走?"};
-        String[] MessageItem_Time = {"08:21","昨天"};
+        String[] MessageItem_UsrName = {};
+        int[] MessageItem_Icon = {};
+        String[] MessageItem_Message = {};
+        String[] MessageItem_Time = {};
 
-        public MessageListAdapter(Context context){
+        public MessageListAdapter(Context context, String[] MessageItem_UsrName, int[] MessageItem_Icon, String[] MessageItem_Message, String[] MessageItem_Time) {
             this.context = context;
+            this.MessageItem_UsrName = MessageItem_UsrName;
+            this.MessageItem_Icon = MessageItem_Icon;
+            this.MessageItem_Message = MessageItem_Message;
+            this.MessageItem_Time = MessageItem_Time;
+
         }
 
         @Override
@@ -117,7 +128,7 @@ public class Message extends Fragment {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             LayoutInflater layoutInflater = LayoutInflater.from(context);
-            View MessageListViewItem = layoutInflater.inflate(R.layout.message_listitem,null);
+            View MessageListViewItem = layoutInflater.inflate(R.layout.message_listitem, null);
 
             //获取listview中各元素
             ImageView UsrIcon = (ImageView) MessageListViewItem.findViewById(R.id.MessageListItem_UsrIcon);

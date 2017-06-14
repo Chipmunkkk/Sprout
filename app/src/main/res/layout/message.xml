@@ -11,12 +11,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </com.example.chipmunk.sprout.CustomView.Rounded_EditText>
-        <ListView
+        <com.example.chipmunk.sprout.CustomView.MyListView
             android:id="@+id/Message_listView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-        </ListView>
+        </com.example.chipmunk.sprout.CustomView.MyListView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/mercury"/>
     </LinearLayout>
 
 </FrameLayout>

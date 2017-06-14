@@ -27,10 +27,8 @@
         <activity
             android:name=".MainPage"
             android:theme="@style/AppTheme.NoActionBar">
-
         </activity>
         <activity android:name=".Me.MyCareer">
-
         </activity>
         <activity android:name=".Discover.Discovery_learnBook"/>
         <activity android:name=".Discover.Discovery_circelFriend"/>
