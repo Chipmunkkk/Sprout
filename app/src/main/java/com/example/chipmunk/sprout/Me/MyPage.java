@@ -1,6 +1,7 @@
 package com.example.chipmunk.sprout.Me;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.chipmunk.sprout.MessageView.Message_Notice;
 import com.example.chipmunk.sprout.R;
 
 public class MyPage extends Activity implements View.OnClickListener{
@@ -42,6 +44,11 @@ public class MyPage extends Activity implements View.OnClickListener{
                 break;
             default:break;
         }
+        startActivity(intent);
+    }
+
+    public void goToNotice(Context context) {
+        intent = new Intent(context, Message_Notice.class);
         startActivity(intent);
     }
 }

@@ -6,7 +6,9 @@
     <com.example.chipmunk.sprout.CustomView.TitleLayout_Me
         android:id="@+id/id_Title_MyPage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.example.chipmunk.sprout.CustomView.TitleLayout_Me>
+        android:layout_height="wrap_content">
+
+    </com.example.chipmunk.sprout.CustomView.TitleLayout_Me>
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -3,32 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:padding="15dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="40dp"
-        android:orientation="horizontal"
-        android:layout_weight="0.04">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/head" />
+            android:src="@drawable/head" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:padding="5dp">
 
             <TextView
                 android:id="@+id/userName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:text="李四"
                 android:textSize="20dp" />
 
@@ -40,68 +40,63 @@
                 android:text="沉迷于诸葛亮的颜值无法自拔" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="150dp"
-            android:gravity="right"
-            app:srcCompat="@drawable/expand" />
-
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="10dp"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/heart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/heart" />
+        <com.sackcentury.shinebuttonlib.ShineButton
+            android:id="@+id/id_shineButton_heart"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:src="@android:color/darker_gray"
+            app:allow_random_color="false"
+            app:big_shine_color="@color/bermuda"
+            app:btn_color="@android:color/darker_gray"
+            app:btn_fill_color="@color/bermuda"
+            app:click_animation_duration="20"
+            app:enable_flashing="false"
+            app:shine_animation_duration="150"
+            app:shine_count="8"
+            app:shine_turn_angle="10"
+            app:siShape="@raw/heart"
+            app:small_shine_color="#CC9999"
+            app:small_shine_offset_angle="20" />
 
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/praise" />
-
-        <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/dispraise" />
-
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/forward" />
+        <com.sackcentury.shinebuttonlib.ShineButton
+            android:id="@+id/id_shineButton_forward"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:src="@android:color/darker_gray"
+            app:allow_random_color="false"
+            app:big_shine_color="@color/bermuda"
+            app:btn_color="@android:color/darker_gray"
+            app:btn_fill_color="@color/bermuda"
+            app:click_animation_duration="20"
+            app:enable_flashing="false"
+            app:shine_animation_duration="150"
+            app:shine_count="8"
+            app:shine_turn_angle="10"
+            app:siShape="@raw/forward"
+            app:small_shine_color="#CC9999"
+            app:small_shine_offset_angle="20" />
 
     </LinearLayout>
 
-    <LinearLayout
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_shap"
-           android:hint="评论" />
-    </LinearLayout>
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_shap"
+        android:hint="评论" />
 
 </LinearLayout>
 

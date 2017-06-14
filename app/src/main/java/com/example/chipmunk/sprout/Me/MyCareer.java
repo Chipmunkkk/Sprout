@@ -2,6 +2,7 @@ package com.example.chipmunk.sprout.Me;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.chipmunk.sprout.MessageView.Message_Notice;
 import com.example.chipmunk.sprout.R;
 
 import java.util.List;
@@ -19,6 +21,8 @@ public class MyCareer extends Activity {
 
     private ListView ListView_RP;
     private ListView ListView_Career;
+
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,11 @@ public class MyCareer extends Activity {
 
         ListView_RP.setAdapter(rp);
         ListView_Career.setAdapter(career);
+    }
+
+    public void goToNotice(Context context) {
+        intent = new Intent(context, Message_Notice.class);
+        startActivity(intent);
     }
 
     public class RP_Adapter extends BaseAdapter{
