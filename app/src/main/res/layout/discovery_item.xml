@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/circleFriends"
+    style="@style/discovery_linear"
+    android:layout_marginTop="16dp">
+
+
+    <ImageView
+        android:id="@+id/circleFriendsImg"
+        style="@style/discovery_img"
+        android:src="@drawable/circle_friends"/>
+
+    <TextView
+        android:id="@+id/circleFriendsText"
+        style="@style/discovery_text"
+        android:text="校友圈"/>
+
+</LinearLayout>
+
+
+

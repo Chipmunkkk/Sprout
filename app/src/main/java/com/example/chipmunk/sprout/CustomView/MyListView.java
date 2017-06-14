@@ -20,6 +20,7 @@ public class MyListView extends ListView {
 
     public MyListView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        setVerticalScrollBarEnabled(false);
     }
 
     @Override

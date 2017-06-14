@@ -37,7 +37,7 @@ public class DiscoveryPage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.activity_discovery_listview, null);
+        view = inflater.inflate(R.layout.discovery_listview, null);
         return view;
     }
 
@@ -71,9 +71,9 @@ public class DiscoveryPage extends Fragment {
         list3.add(map);
 
 
-        SimpleAdapter sa1 = new SimpleAdapter(getActivity(), list1, R.layout.activity_discovery_item, new String[]{"img", "text"}, new int[]{R.id.circleFriendsImg, R.id.circleFriendsText});
-        SimpleAdapter sa2 = new SimpleAdapter(getActivity(), list2, R.layout.activity_discovery_item, new String[]{"img", "text"}, new int[]{R.id.circleFriendsImg, R.id.circleFriendsText});
-        SimpleAdapter sa3 = new SimpleAdapter(getActivity(), list3, R.layout.activity_discovery_item, new String[]{"img", "text"}, new int[]{R.id.circleFriendsImg, R.id.circleFriendsText});
+        SimpleAdapter sa1 = new SimpleAdapter(getActivity(), list1, R.layout.discovery_item, new String[]{"img", "text"}, new int[]{R.id.circleFriendsImg, R.id.circleFriendsText});
+        SimpleAdapter sa2 = new SimpleAdapter(getActivity(), list2, R.layout.discovery_item, new String[]{"img", "text"}, new int[]{R.id.circleFriendsImg, R.id.circleFriendsText});
+        SimpleAdapter sa3 = new SimpleAdapter(getActivity(), list3, R.layout.discovery_item, new String[]{"img", "text"}, new int[]{R.id.circleFriendsImg, R.id.circleFriendsText});
         listView1.setAdapter(sa1);
         listView2.setAdapter(sa2);
         listView3.setAdapter(sa3);
@@ -92,7 +92,6 @@ public class DiscoveryPage extends Fragment {
                 intent = new Intent();
                 intent.setClass(getActivity(),Discovery_circelFriend.class);
                 startActivity(intent);
-                Log.i("aafadfdfdfdsfdsfds", "onItemClick: ");
             }
         }
     }

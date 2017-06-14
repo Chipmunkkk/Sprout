@@ -1,5 +1,6 @@
 package com.example.chipmunk.sprout;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -244,5 +245,10 @@ public class MainPage extends AppCompatActivity
                 break;
             default:break;
         }
+    }
+
+    public void goToNotice(Context context){
+        Intent intent = new Intent(context,Message_Notice.class);
+        startActivity(intent);
     }
 }

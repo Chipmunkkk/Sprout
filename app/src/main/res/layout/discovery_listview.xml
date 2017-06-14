@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/mercury" />
+
+        <com.example.chipmunk.sprout.CustomView.MyListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.example.chipmunk.sprout.CustomView.MyListView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/mercury" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/mercury" />
+
+        <com.example.chipmunk.sprout.CustomView.MyListView
+            android:id="@+id/listView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.example.chipmunk.sprout.CustomView.MyListView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/mercury" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/mercury" />
+
+        <com.example.chipmunk.sprout.CustomView.MyListView
+            android:id="@+id/listView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.example.chipmunk.sprout.CustomView.MyListView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/mercury" />
+    </LinearLayout>
+
+</FrameLayout>
+

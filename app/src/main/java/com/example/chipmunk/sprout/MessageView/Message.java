@@ -1,6 +1,5 @@
 package com.example.chipmunk.sprout.MessageView;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +19,9 @@ import android.widget.Toast;
 
 import com.example.chipmunk.sprout.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,15 +34,28 @@ public class Message extends Fragment {
 
     MessageListAdapter messageListAdapter;
 
-    String[] MessageItem_UsrName = {"李四", "王五"};
-    int[] MessageItem_Icon = {R.drawable.sprout, R.drawable.sprout};
-    String[] MessageItem_Message = {"今天有空么????", "A5怎么走?"};
-    String[] MessageItem_Time = {"08:21", "昨天"};
+    List<String> MessageItem_UsrName = new ArrayList<String>();
+    List<Integer> MessageItem_Icon = new ArrayList<Integer>();
+    List<String> MessageItem_Message = new ArrayList<String>();
+    List<String> MessageItem_Time = new ArrayList<String>();
 
     public Message() {
         // Required empty public constructor
     }
 
+    public void setData(){
+        MessageItem_UsrName.add("李四");
+        MessageItem_UsrName.add("王五");
+
+        MessageItem_Icon.add(R.drawable.sprout);
+        MessageItem_Icon.add(R.drawable.sprout);
+
+        MessageItem_Message.add("今天有空么????");
+        MessageItem_Message.add("A5怎么走?");
+
+        MessageItem_Time.add("08:21");
+        MessageItem_Time.add("昨天");
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -78,6 +93,7 @@ public class Message extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        setData();
         MessageListView = (ListView) view.findViewById(R.id.Message_listView);
         messageListAdapter = new MessageListAdapter(getActivity(),MessageItem_UsrName,MessageItem_Icon,MessageItem_Message,MessageItem_Time);
         MessageListView.setAdapter(messageListAdapter);
@@ -86,6 +102,8 @@ public class Message extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 intent = new Intent();
                 intent.setClass(getActivity(), Message_Chat.class);
+                String name = MessageItem_UsrName.get(position);
+                intent.putExtra("usrName",name);
                 startActivity(intent);
             }
         });
@@ -96,28 +114,27 @@ public class Message extends Fragment {
         Context context;
 
         //测试样例,最后从本地或数据库中读取
-        String[] MessageItem_UsrName = {};
-        int[] MessageItem_Icon = {};
-        String[] MessageItem_Message = {};
-        String[] MessageItem_Time = {};
+        List<String> MessageItem_UsrName = new ArrayList<String>();
+        List<Integer> MessageItem_Icon = new ArrayList<Integer>();
+        List<String> MessageItem_Message = new ArrayList<String>();
+        List<String> MessageItem_Time = new ArrayList<String>();
 
-        public MessageListAdapter(Context context, String[] MessageItem_UsrName, int[] MessageItem_Icon, String[] MessageItem_Message, String[] MessageItem_Time) {
+        public MessageListAdapter(Context context, List<String> MessageItem_UsrName, List<Integer> MessageItem_Icon, List<String> MessageItem_Message, List<String> MessageItem_Time) {
             this.context = context;
             this.MessageItem_UsrName = MessageItem_UsrName;
             this.MessageItem_Icon = MessageItem_Icon;
             this.MessageItem_Message = MessageItem_Message;
             this.MessageItem_Time = MessageItem_Time;
-
         }
 
         @Override
         public int getCount() {
-            return MessageItem_UsrName.length;
+            return MessageItem_UsrName.size();
         }
 
         @Override
         public Object getItem(int position) {
-            return MessageItem_UsrName[position];
+            return MessageItem_UsrName.get(position);
         }
 
         @Override
@@ -137,10 +154,10 @@ public class Message extends Fragment {
             TextView MessageTime = (TextView) MessageListViewItem.findViewById(R.id.MessageListItem_Time);
 
             //为各元素设置属性
-            UsrIcon.setImageResource(MessageItem_Icon[position]);
-            UsrName.setText(MessageItem_UsrName[position]);
-            MessageContext.setText(MessageItem_Message[position]);
-            MessageTime.setText(MessageItem_Time[position]);
+            UsrIcon.setImageResource(MessageItem_Icon.get(position));
+            UsrName.setText(MessageItem_UsrName.get(position));
+            MessageContext.setText(MessageItem_Message.get(position));
+            MessageTime.setText(MessageItem_Time.get(position));
             return MessageListViewItem;
         }
     }

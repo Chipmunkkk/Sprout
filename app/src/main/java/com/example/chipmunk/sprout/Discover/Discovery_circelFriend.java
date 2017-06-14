@@ -20,9 +20,8 @@ public class Discovery_circelFriend extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_discovery_circelfriend_listview);
+        setContentView(R.layout.discovery_circelfriend_listview);
         listView1=(ListView)findViewById(R.id.listView1);
-
 
         map.put("uesrName", "李四");
         map.put("content", "沉迷于诸葛亮的颜值无法自拔");
@@ -43,7 +42,7 @@ public class Discovery_circelFriend extends Activity {
         map.put("content", "xxxxxxxxxxxxxxxxxxxx");
         map.put("heart", R.drawable.heart);
         list1.add(map);
-        SimpleAdapter sa1 = new SimpleAdapter(this, list1, R.layout.activity_discovery_circelfriend_item,
+        SimpleAdapter sa1 = new SimpleAdapter(this, list1, R.layout.discovery_circelfriend_item,
                 new String[]{"uesrName", "content","heart"},
                 new int[]{R.id.userName, R.id.content,R.id.heart});
         listView1.setAdapter(sa1);

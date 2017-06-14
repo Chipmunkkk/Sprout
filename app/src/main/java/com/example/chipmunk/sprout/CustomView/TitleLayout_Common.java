@@ -8,7 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
+import com.example.chipmunk.sprout.MainPage;
 import com.example.chipmunk.sprout.MessageView.Message_Notice;
 import com.example.chipmunk.sprout.R;
 
@@ -34,11 +36,13 @@ public class TitleLayout_Common extends RelativeLayout implements View.OnClickLi
         intent = new Intent();
         switch (v.getId()) {
             case R.id.TitleImgView_Notice:
-                intent.setClass(getContext(), Message_Notice.class);
+                MainPage mainPage = (MainPage) getContext();
+                mainPage.goToNotice(getContext());
                 break;
             case R.id.TitleImgView_Me:
                 intent.setClass(getContext(), Message_Notice.class);
                 break;
         }
+
     }
 }

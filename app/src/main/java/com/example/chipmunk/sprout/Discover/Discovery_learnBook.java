@@ -18,7 +18,7 @@ public class Discovery_learnBook extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_discovery_learnbook_listview);
+        setContentView(R.layout.discovery_learnbook_listview);
         listView1=(ListView)findViewById(R.id.listView1);
 
         Map<String, Object> map = new HashMap<String, Object>();
@@ -46,10 +46,10 @@ public class Discovery_learnBook extends Activity {
 
 
 
-        SimpleAdapter sa1=new SimpleAdapter(this,list1,R.layout.activity_discovery_learnbook_item,
+        SimpleAdapter sa1=new SimpleAdapter(this,list1,R.layout.discovery_learnbook_item,
                 new String[]{"user","name","time","content","file1","file2","date","read","response"},
                 new int[]{R.id.user,R.id.name,R.id.time,R.id.content,R.id.file1,R.id.file2,R.id.date,R.id.read,R.id.response});
-        SimpleAdapter sa2=new SimpleAdapter(this,list1,R.layout.activity_discovery_learnbook_item,
+        SimpleAdapter sa2=new SimpleAdapter(this,list1,R.layout.discovery_learnbook_item,
                 new String[]{"user","name"},
                 new int[]{R.id.user,R.id.name});
         listView1.setAdapter(sa1);

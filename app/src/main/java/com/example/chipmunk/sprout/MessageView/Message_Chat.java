@@ -2,7 +2,9 @@ package com.example.chipmunk.sprout.MessageView;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +35,13 @@ public class Message_Chat extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.message_chat);
         initMessages();
+        Intent intent = getIntent();
+        if(intent!=null){
+            String name = intent.getStringExtra("usrName");
+            TextView messageResource = (TextView) findViewById(R.id.TitleTxtView_MessageResource);
+            Log.d("111111", "onCreate: "+messageResource.getText().toString());
+            messageResource.setText(name);
+        }
         message_chatAdapter = new Message_ChatAdapter(Message_Chat.this,R.layout.chat_listitem,messageList);
         InputMessage = (EditText) findViewById(R.id.InputMessage);
         sendMessage = (Button) findViewById(R.id.Btn_SendMessage);

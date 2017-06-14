@@ -15,14 +15,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
-        <!--<ImageView-->
-            <!--android:id="@+id/TitleImgView_Me"-->
-            <!--android:layout_width="25dp"-->
-            <!--android:layout_height="25dp"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:layout_weight="1"-->
-            <!--android:src="@drawable/me"/>-->
-
         <com.example.chipmunk.sprout.CustomView.CircleImageView
             android:id="@+id/TitleImgView_Me"
             android:layout_width="25dp"

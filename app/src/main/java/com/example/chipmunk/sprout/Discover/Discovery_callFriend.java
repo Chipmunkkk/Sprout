@@ -1,20 +1,11 @@
 package com.example.chipmunk.sprout.Discover;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.example.chipmunk.sprout.R;
 
@@ -32,7 +23,7 @@ public class Discovery_callFriend extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_discovery_callfriend_listview);
+        setContentView(R.layout.discovery_callfriend_listview);
         //实现条件选择
         Spinner spinner1 = (Spinner) findViewById(R.id.callfriend1);
         Spinner spinner2 = (Spinner) findViewById(R.id.callfriend2);
@@ -68,7 +59,7 @@ public class Discovery_callFriend extends Activity {
         map=new HashMap<String, Object>();
         map.put("title","网络");
         list1.add(map);
-        SimpleAdapter sa2=new SimpleAdapter(this,list1,R.layout.activity_discovery_callfriend_item2,
+        SimpleAdapter sa2=new SimpleAdapter(this,list1,R.layout.discovery_callfriend_item2,
                 new String[]{"title"},
                 new int[]{R.id.title});
 
