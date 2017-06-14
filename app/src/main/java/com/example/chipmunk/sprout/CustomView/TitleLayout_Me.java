@@ -11,9 +11,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.example.chipmunk.sprout.Discover.Discovery_circelFriend;
-import com.example.chipmunk.sprout.Me.MyPage;
-import com.example.chipmunk.sprout.Me.MyCareer;
+import com.example.chipmunk.sprout.Discover.*;
+import com.example.chipmunk.sprout.Me.*;
 import com.example.chipmunk.sprout.R;
 
 /**
@@ -60,6 +59,8 @@ public class TitleLayout_Me extends RelativeLayout implements View.OnClickListen
                     case "com.example.chipmunk.sprout.Me.MyCareer":
                         ((MyCareer) getContext()).goToNotice(getContext());
                         break;
+                    case "com.example.chipmunk.sprout.Discover.Discovery_learnBook":
+                        ((Discovery_learnBook) getContext()).goToNotice(getContext());
                     default:break;
                 }
 

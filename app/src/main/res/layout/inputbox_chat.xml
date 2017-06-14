@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/bermuda"
+        android:padding="5dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -15,20 +16,23 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_weight="1"
             android:src="@drawable/voice"/>
         <EditText
             android:id="@+id/InputMessage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:maxLines="2"
-            android:layout_weight="20"/>
+            android:background="@drawable/edit_shape_chat"
+            android:layout_gravity="center"
+            android:layout_weight="1"/>
         <Button
             android:id="@+id/Btn_SendMessage"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
             android:layout_gravity="center"
             android:text="@string/SendMessage"
-            android:layout_weight="1"/>
+            android:textColor="@color/textColor_white"
+            android:background="@drawable/btn_send_chat"/>
     </LinearLayout>
 </RelativeLayout>

@@ -71,23 +71,23 @@ public class MyCollege extends Fragment {
 
         Notice_title_campus.add("我校学生在第七届全国大学生计算机应用大赛");
         Notice_title_campus.add("数字艺术系举行第七届数字春天及第二届");
-        Notice_title_campus.add("第一届'古韵东软'传统文化嘉年华举行");
+        Notice_title_campus.add("第一届\"古韵东软\"传统文化嘉年华举行");
         Notice_title_campus.add("我校成为多家辽宁省校企联盟会员单位");
         Notice_title_campus.add("伊藤忠商一行来校参观");
     }
 
     public void setData_department(){
-        Notice_time_deparment.add("06-07");
+        Notice_time_deparment.add("06-12");
         Notice_time_deparment.add("06-06");
-        Notice_time_deparment.add("06-05");
-        Notice_time_deparment.add("06-05");
-        Notice_time_deparment.add("06-05");
+        Notice_time_deparment.add("06-06");
+        Notice_time_deparment.add("06-06");
+        Notice_time_deparment.add("06-06");
 
-        Notice_title_deparment.add("我校学生在第七届全国大学生计算机应用大赛");
-        Notice_title_deparment.add("数字艺术系举行第七届数字春天及第二届");
-        Notice_title_deparment.add("第一届'古韵东软'传统文化嘉年华举行");
-        Notice_title_deparment.add("我校成为多家辽宁省校企联盟会员单位");
-        Notice_title_deparment.add("伊藤忠商一行来校参观");
+        Notice_title_deparment.add("2017年Google移动应用软件开发(Android)课程建设研讨会");
+        Notice_title_deparment.add("\"对话世界-TALK TO THE WORLD\"系列活动的通知");
+        Notice_title_deparment.add("祝贺我系学子在第七届全国大学生计算机应用能力与信息素养大赛中喜获佳绩");
+        Notice_title_deparment.add("[亿达信息技术有限公司职位]招聘,6月13日 17:20在A3-221宣讲");
+        Notice_title_deparment.add("第八期\"青马培训\"颁奖典礼暨第八届\"加油团支部!\"--班风班貌风采展示大赛邀请函");
     }
 
     private void rollPagerViewSet() {

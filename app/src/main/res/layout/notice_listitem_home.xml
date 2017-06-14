@@ -9,7 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="17sp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/tea_green"
         android:text="06-07" />
 
     <TextView
@@ -17,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="17sp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginRight="15dp"
         android:singleLine="true"
         android:text="我校学生在第七届全国大学生计算机应用大赛" />

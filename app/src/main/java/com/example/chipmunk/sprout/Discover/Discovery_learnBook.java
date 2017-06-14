@@ -1,10 +1,13 @@
 package com.example.chipmunk.sprout.Discover;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.example.chipmunk.sprout.MessageView.Message_Notice;
 import com.example.chipmunk.sprout.R;
 
 import java.util.ArrayList;
@@ -15,6 +18,8 @@ import java.util.Map;
 public class Discovery_learnBook extends Activity {
     ListView listView1;
     List<Map<String,Object>> list1=new ArrayList<>();
+
+    private Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,5 +59,10 @@ public class Discovery_learnBook extends Activity {
                 new int[]{R.id.user,R.id.name});
         listView1.setAdapter(sa1);
 
+    }
+
+    public void goToNotice(Context context){
+        intent = new Intent(context, Message_Notice.class);
+        startActivity(intent);
     }
 }

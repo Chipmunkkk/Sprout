@@ -21,7 +21,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/silver_sand" />
+                android:background="@color/tea_green" />
 
             <LinearLayout
                 android:id="@+id/recommand"
@@ -46,6 +46,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:paddingRight="10dp"
+                        android:textColor="@color/tea_green"
                         android:text="更多>"/>
                 </LinearLayout>
 
@@ -59,7 +60,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/silver_sand" />
+                android:background="@color/tea_green" />
 
             <LinearLayout
                 android:id="@+id/discount"
@@ -84,6 +85,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:paddingRight="10dp"
+                        android:textColor="@color/tea_green"
                         android:text="更多>"/>
 
                 </LinearLayout>
