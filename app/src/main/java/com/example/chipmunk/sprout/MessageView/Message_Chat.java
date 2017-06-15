@@ -63,9 +63,9 @@ public class Message_Chat extends Activity {
     }
 
     private void initMessages(){
-        Chat chat_1 = new Chat("Hello guy.",Chat.TYPE_RECEIVED);
-        Chat chat_2 = new Chat("Hello.Who is that.",Chat.TYPE_SENT);
-        Chat chat_3 = new Chat("This is Tom.Nice talking to you.",Chat.TYPE_RECEIVED);
+        Chat chat_1 = new Chat("你好哟~",Chat.TYPE_RECEIVED);
+        Chat chat_2 = new Chat("你是????",Chat.TYPE_SENT);
+        Chat chat_3 = new Chat("我是XXX,很高兴能和你谈话",Chat.TYPE_RECEIVED);
         messageList.add(chat_1);
         messageList.add(chat_2);
         messageList.add(chat_3);
