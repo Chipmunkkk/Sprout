@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.example.chipmunk.sprout.CustomView.MyListView;
@@ -50,8 +49,11 @@ public class MyCollege extends Fragment {
     List<String> Notice_time_deparment = new ArrayList<>();
     List<String> Notice_title_deparment = new ArrayList<>();
 
-    String NoticeTime = "";
-    String NoticeTitle = "";
+    String NoticeTime_department = "";
+    String NoticeTitle_department = "";
+
+    String NoticeTime_campus = "";
+    String NoticeTitle_campus = "";
 
     public MyCollege() {
         // Required empty public constructor
@@ -67,15 +69,11 @@ public class MyCollege extends Fragment {
         rollPagerViewSet();
 
         sendRequestWithOkHttp_campus();
-        sendRequestWithOkHttp_department();
-
-        //setData_campus();
         noticeAdapter = new noticeAdapter(getContext(), Notice_time_campus, Notice_title_campus);
         myListView_campus.setAdapter(noticeAdapter);
-        //setData_department();
+        sendRequestWithOkHttp_department();
         noticeAdapter = new noticeAdapter(getContext(), Notice_time_deparment, Notice_title_deparment);
         myListView_department.setAdapter(noticeAdapter);
-
         return view;
     }
 
@@ -83,12 +81,13 @@ public class MyCollege extends Fragment {
         OkHttpClient client = new OkHttpClient();
         Request.Builder builder = new Request.Builder();
 
-        Request request = builder.get().url("http://169.254.170.244:8080/ch06/campus_notice.json").build();
+        Request request = builder.get().url("http://elucidator.oss-cn-beijing.aliyuncs.com/json/campus_notice.json").build();
         Call call = client.newCall(request);
 
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
+
             }
 
             @Override
@@ -102,7 +101,7 @@ public class MyCollege extends Fragment {
         OkHttpClient client = new OkHttpClient();
         Request.Builder builder = new Request.Builder();
 
-        Request request = builder.get().url("http://169.254.170.244:8080/ch06/department_notice.json").build();
+        Request request = builder.get().url("http://elucidator.oss-cn-beijing.aliyuncs.com/department_notice.json").build();
         Call call = client.newCall(request);
 
         call.enqueue(new Callback() {
@@ -203,10 +202,10 @@ public class MyCollege extends Fragment {
             JSONArray jsonArray_campus = new JSONArray(jsonData_campus);
             for (int i = 0; i < jsonArray_campus.length(); i++) {
                 JSONObject jsonObject_campus = jsonArray_campus.getJSONObject(i);
-                this.NoticeTime = jsonObject_campus.getString("time");
-                this.NoticeTitle = jsonObject_campus.getString("title");
-                Notice_time_campus.add(NoticeTime);
-                Notice_title_campus.add(NoticeTitle);
+                NoticeTime_campus = jsonObject_campus.getString("time");
+                NoticeTitle_campus = jsonObject_campus.getString("title");
+                Notice_time_campus.add(NoticeTime_campus);
+                Notice_title_campus.add(NoticeTitle_campus);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -218,10 +217,10 @@ public class MyCollege extends Fragment {
             JSONArray jsonArray_department = new JSONArray(jsonData_department);
             for (int i = 0; i < jsonArray_department.length(); i++) {
                 JSONObject jsonObject_department = jsonArray_department.getJSONObject(i);
-                this.NoticeTime = jsonObject_department.getString("time");
-                this.NoticeTitle = jsonObject_department.getString("title");
-                Notice_time_deparment.add(NoticeTime);
-                Notice_title_deparment.add(NoticeTitle);
+                NoticeTime_department = jsonObject_department.getString("time");
+                NoticeTitle_department = jsonObject_department.getString("title");
+                Notice_time_deparment.add(NoticeTime_department);
+                Notice_title_deparment.add(NoticeTitle_department);
             }
         } catch (Exception e) {
             e.printStackTrace();
