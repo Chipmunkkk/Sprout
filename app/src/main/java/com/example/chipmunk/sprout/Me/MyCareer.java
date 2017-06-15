@@ -47,7 +47,7 @@ public class MyCareer extends Activity {
     public class RP_Adapter extends BaseAdapter{
 
         Context context;
-        String[] RP = {"三好学生","三好学生","三好学生","三好学生","三好学生"};
+        String[] RP = {"2015-2016年读书大赛一等奖","2015-2016年ACM编程大赛三等奖"};
 
         public RP_Adapter (Context context){
             this.context = context;
@@ -82,7 +82,7 @@ public class MyCareer extends Activity {
     public class Career_Adapter extends BaseAdapter{
 
         Context context;
-        String[] career = {"三好1学生","三好1学生","三好1学生","三好1学生"};
+        String[] career = {"2015至今学年担任班长","2016-2017担任学生会部长"};
 
         public Career_Adapter (Context context){
             this.context = context;
