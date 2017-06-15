@@ -2,19 +2,14 @@ package com.example.chipmunk.sprout;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 
 import com.example.chipmunk.sprout.Login_Register.Login;
 import com.example.chipmunk.sprout.Login_Register.Register_InputTelphone;
 import com.example.chipmunk.sprout.Utils.ActivityCollector;
-import com.example.chipmunk.sprout.Utils.StatusBarUtil;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 public class Welcome extends Activity implements View.OnClickListener{
 

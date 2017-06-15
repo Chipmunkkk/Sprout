@@ -1,26 +1,32 @@
 package com.example.chipmunk.sprout.Me;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.chipmunk.sprout.MessageView.Message_Notice;
 import com.example.chipmunk.sprout.R;
 
+import java.io.File;
 import java.util.List;
 
 public class MyCareer extends Activity {
 
     private ListView ListView_RP;
     private ListView ListView_Career;
+
+    private Button btn_generate;
 
     private Intent intent;
 
@@ -37,6 +43,14 @@ public class MyCareer extends Activity {
 
         ListView_RP.setAdapter(rp);
         ListView_Career.setAdapter(career);
+        btn_generate = (Button) findViewById(R.id.id_btn_generate);
+        btn_generate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getDIR();
+                newPackage();
+            }
+        });
     }
 
     public void goToNotice(Context context) {
@@ -112,6 +126,23 @@ public class MyCareer extends Activity {
 
             Career_context.setText(career[position]);
             return RP_item;
+        }
+    }
+
+    public void getDIR(){
+        String sdpath = Environment.getExternalStorageDirectory().toString();
+        AlertDialog.Builder build = new AlertDialog.Builder(this);
+        build.setMessage(sdpath).show();
+    }
+    public void newPackage(){
+        String mkdir = Environment.getExternalStorageDirectory()+"/Sprout/test.txt";
+        File file = new File(mkdir);
+        AlertDialog.Builder build = new AlertDialog.Builder(this);
+        if(file.exists()){
+            build.setMessage("文件夹已存在").show();
+        }else{
+            file.mkdirs();
+            build.setMessage("新建成功").show();
         }
     }
 }

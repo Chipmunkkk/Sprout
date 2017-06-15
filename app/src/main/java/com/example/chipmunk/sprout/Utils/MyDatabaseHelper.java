@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class MyDatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String CREATE_BOOK = "create table Notice IF NOT EXISTS (" + "id integer primary key autoincrement,"
+    public static final String CREATE_BOOK = "create table Notice (" + "id integer primary key autoincrement,"
             + "Notice_title text," + "Notice_summary text," + "Notice_icon integer," + "Notice_time text )";
 
     private Context context;

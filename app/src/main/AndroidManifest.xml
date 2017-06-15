@@ -14,11 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Welcome">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Login_Register.Login" />
         <activity android:name=".Login_Register.Register_InputTelphone" />
@@ -30,7 +26,13 @@
         <activity android:name=".Me.MyPage" />
         <activity
             android:name=".MainPage"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Me.MyCareer"></activity>
         <activity android:name=".Discover.Discovery_learnBook" />
         <activity android:name=".Discover.Discovery_circelFriend" />

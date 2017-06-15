@@ -42,7 +42,8 @@ public class MyCollege extends Fragment {
     private MyListView myListView_campus;
     private MyListView myListView_department;
     private View view;
-    private noticeAdapter noticeAdapter;
+    private noticeAdapter noticeAdapter_campus;
+    private noticeAdapter noticeAdapter_department;
     List<String> Notice_title_campus = new ArrayList<>();
     List<String> Notice_time_campus = new ArrayList<>();
 
@@ -65,16 +66,18 @@ public class MyCollege extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.homepage, container, false);
+
+        getJson();
+
         initView();//获取对应控件
         rollPagerViewSet();
 
-        sendRequestWithOkHttp_campus();
-        noticeAdapter = new noticeAdapter(getContext(), Notice_time_campus, Notice_title_campus);
-        myListView_campus.setAdapter(noticeAdapter);
-        sendRequestWithOkHttp_department();
-        noticeAdapter = new noticeAdapter(getContext(), Notice_time_deparment, Notice_title_deparment);
-        myListView_department.setAdapter(noticeAdapter);
         return view;
+    }
+
+    public void getJson(){
+        sendRequestWithOkHttp_campus();
+        sendRequestWithOkHttp_department();
     }
 
     private void sendRequestWithOkHttp_campus() {
@@ -101,7 +104,7 @@ public class MyCollege extends Fragment {
         OkHttpClient client = new OkHttpClient();
         Request.Builder builder = new Request.Builder();
 
-        Request request = builder.get().url("http://elucidator.oss-cn-beijing.aliyuncs.com/department_notice.json").build();
+        Request request = builder.get().url("http://elucidator.oss-cn-beijing.aliyuncs.com/json/department_notice.json").build();
         Call call = client.newCall(request);
 
         call.enqueue(new Callback() {
@@ -111,8 +114,8 @@ public class MyCollege extends Fragment {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                String responseData_campus = response.body().string();
-                parseJSONWithJSONObject_department(responseData_campus);
+                String responseData_department = response.body().string();
+                parseJSONWithJSONObject_department(responseData_department);
             }
         });
     }
@@ -130,30 +133,49 @@ public class MyCollege extends Fragment {
         myListView_department = (MyListView) view.findViewById(R.id.id_listView_departmentNotice);
     }
 
-
-    private class rollViewpagerAdapter extends StaticPagerAdapter {
-
-        private int[] res = {R.drawable.banner_1
-                , R.drawable.banner_2,
-                R.drawable.banner_3,
-                R.drawable.banner_4};
-
-        @Override
-        public View getView(ViewGroup container, int position) {
-            ImageView imageView = new ImageView(container.getContext());
-            imageView.setImageResource(res[position]);
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT));
-            return imageView;
-        }
-
-        @Override
-        public int getCount() {
-            return res.length;
+    private void parseJSONWithJSONObject_campus(String jsonData_campus) {
+        try {
+            JSONArray jsonArray_campus = new JSONArray(jsonData_campus);
+            for (int i = 0; i < jsonArray_campus.length(); i++) {
+                JSONObject jsonObject_campus = jsonArray_campus.getJSONObject(i);
+                NoticeTime_campus = jsonObject_campus.getString("time");
+                NoticeTitle_campus = jsonObject_campus.getString("title");
+                Notice_time_campus.add(NoticeTime_campus);
+                Notice_title_campus.add(NoticeTitle_campus);
+            }
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    noticeAdapter_campus = new noticeAdapter(getContext(), Notice_time_campus, Notice_title_campus);
+                    myListView_campus.setAdapter(noticeAdapter_campus);
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
+    private void parseJSONWithJSONObject_department(String jsonData_department) {
+        try {
+            JSONArray jsonArray_department = new JSONArray(jsonData_department);
+            for (int i = 0; i < jsonArray_department.length(); i++) {
+                JSONObject jsonObject_department = jsonArray_department.getJSONObject(i);
+                NoticeTime_department = jsonObject_department.getString("time");
+                NoticeTitle_department = jsonObject_department.getString("title");
+                Notice_time_deparment.add(NoticeTime_department);
+                Notice_title_deparment.add(NoticeTitle_department);
+            }
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    noticeAdapter_department = new noticeAdapter(getContext(), Notice_time_deparment, Notice_title_deparment);
+                    myListView_department.setAdapter(noticeAdapter_department);
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     private class noticeAdapter extends BaseAdapter {
 
         Context context;
@@ -197,33 +219,26 @@ public class MyCollege extends Fragment {
         }
     }
 
-    private void parseJSONWithJSONObject_campus(String jsonData_campus) {
-        try {
-            JSONArray jsonArray_campus = new JSONArray(jsonData_campus);
-            for (int i = 0; i < jsonArray_campus.length(); i++) {
-                JSONObject jsonObject_campus = jsonArray_campus.getJSONObject(i);
-                NoticeTime_campus = jsonObject_campus.getString("time");
-                NoticeTitle_campus = jsonObject_campus.getString("title");
-                Notice_time_campus.add(NoticeTime_campus);
-                Notice_title_campus.add(NoticeTitle_campus);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+    private class rollViewpagerAdapter extends StaticPagerAdapter {
 
-    private void parseJSONWithJSONObject_department(String jsonData_department) {
-        try {
-            JSONArray jsonArray_department = new JSONArray(jsonData_department);
-            for (int i = 0; i < jsonArray_department.length(); i++) {
-                JSONObject jsonObject_department = jsonArray_department.getJSONObject(i);
-                NoticeTime_department = jsonObject_department.getString("time");
-                NoticeTitle_department = jsonObject_department.getString("title");
-                Notice_time_deparment.add(NoticeTime_department);
-                Notice_title_deparment.add(NoticeTitle_department);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        private int[] res = {R.drawable.banner_1
+                , R.drawable.banner_2,
+                R.drawable.banner_3,
+                R.drawable.banner_4};
+
+        @Override
+        public View getView(ViewGroup container, int position) {
+            ImageView imageView = new ImageView(container.getContext());
+            imageView.setImageResource(res[position]);
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT));
+            return imageView;
+        }
+
+        @Override
+        public int getCount() {
+            return res.length;
         }
     }
 
